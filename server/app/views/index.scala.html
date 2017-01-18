@@ -1,0 +1,37 @@
+@import play.api._
+
+@(env: Environment, creds: String)
+
+<html>
+    <head>
+        <title>Paywall CSR </title>
+        <meta charset="UTF-8">
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- <link rel="stylesheet" href="styles.css"> -->
+            <!-- 1. Load libraries -->
+            <!-- Polyfill for older browsers -->
+        @*<script src="https://unpkg.com/systemjs@0.19.41/dist/system-polyfills.src.js"></script>*@
+        <script src="https://unpkg.com/core-js@@2.4.1/client/shim.min.js"></script>
+        <script src="https://unpkg.com/zone.js@@0.6.26/dist/zone.min.js"></script>
+        <script src="https://unpkg.com/reflect-metadata@@0.1.9/Reflect.js"></script>
+       @* <script src="https://unpkg.com/systemjs@@0.19.41/dist/system.src.js"></script>*@
+        <script src="https://unpkg.com/systemjs@@0.19.41/dist/system.js"></script>
+
+        <script src="@routes.Assets.versioned("system.config.js")"></script>
+        @*<script src="@routes.Assets.versioned("ngclient-opt.js")"></script>*@
+         @*<script src="@routes.Assets.versioned("ngclient-sjsx.js")"></script>*@
+        <script>
+                window.userPerms = new Array( @Html(creds) );
+                console.log('Initialized Array');
+        </script>
+        <script>
+                System.import('app').catch(function(err){ console.error(err); });
+        </script>
+    </head>
+        <!-- 3. Display the application -->
+    <body>
+        <main-app>Loading Twirl...</main-app>
+        <other-app>Loading Twirl Other...</other-app>
+    </body>
+</html>
