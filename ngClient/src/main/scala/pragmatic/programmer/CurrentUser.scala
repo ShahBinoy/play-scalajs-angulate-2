@@ -1,4 +1,4 @@
-package com.washingtonpost.identity.csr.web
+package pragmatic.programmer
 
 import angulate2.std.Injectable
 import com.washingtonpost.identity.csr.security.Config

@@ -1,4 +1,4 @@
-package com.washingtonpost.identity.csr.security
+package pragmatic.programmer
 
 import scala.scalajs.js
 

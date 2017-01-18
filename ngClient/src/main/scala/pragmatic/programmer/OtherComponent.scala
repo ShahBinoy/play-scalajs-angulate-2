@@ -1,4 +1,4 @@
-package com.washingtonpost.identity.csr.web
+package pragmatic.programmer
 
 import angulate2.ext.tags.simple._
 import angulate2.std._

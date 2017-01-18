@@ -1,4 +1,4 @@
-package com.washingtonpost.identity.csr.web
+package pragmatic.programmer
 
 import angulate2.forms.FormsModule
 import angulate2.http.HttpModule
